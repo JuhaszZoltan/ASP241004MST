@@ -1,0 +1,13 @@
+﻿@{
+    ViewData["Title"] = "HelloWorld Welcome oldala";
+
+    int age = (int)ViewData["Age"];
+}
+
+<ol class="list-group">
+
+@for (int i = 0; i < age; i++)
+{
+    <li>@ViewData["Name"]</li>
+}
+</ol>

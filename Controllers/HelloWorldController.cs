@@ -4,14 +4,21 @@ namespace MvcMovie.Controllers
 {
     public class HelloWorldController : Controller
     {
-        public string Index()
+        public IActionResult Index()
         {
-            return "ez a 'hello world' controller 'index' actionja";
+            return View();
         }
 
-        public string Welcome(string name, int age = 14)
+        public IActionResult Welcome(string name, int age = 14)
         {
-            return $"Szia, {name} {((age < 18) ? "mennyé' haza, ez nem neked való" : "ingyen cukorka a tranzitban")}";
+            ViewData["Name"] = name;
+            ViewData["Age"] = age;
+            return View();
+        }
+
+        public string Goodbye(int id = 10)
+        {
+            return $"az 'id', amit paraméterben kaptam {id}";
         }
     }
 }
