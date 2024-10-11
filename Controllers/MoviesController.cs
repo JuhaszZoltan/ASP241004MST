@@ -66,6 +66,7 @@ namespace MvcMovie.Controllers
         }
 
         // GET: Movies/Edit/5
+        [HttpGet]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
